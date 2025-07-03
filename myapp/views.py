@@ -32,7 +32,7 @@ def appointment(request):
         )
        myappointments.save()
        messages.success(request,'Your appointment has been submitted')
-       return redirect('/appointment')
+       return redirect('/show')
 
     else:
 
@@ -53,3 +53,26 @@ def contact(request):
     else:
 
         return render(request,'contact.html')
+
+def show(request):
+    all = Appointment.objects.all()
+    return render(request,'show.html',{'all':all})
+
+def delete(request,id):
+    myappoint = Appointment.objects.get(id=id)
+    myappoint.delete()
+    return redirect('/show')
+
+    return render(request,'show.html')
+
+def display(request):
+    all = Contact.objects.all()
+    return render(request,'display.html',{'all':all})
+
+def delete(request,id):
+    myappoint = Contact.objects.get(id=id)
+    myappoint.delete()
+    return redirect('/display')
+
+    return render(request,'display.html')
+

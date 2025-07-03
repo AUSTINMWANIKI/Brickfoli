@@ -11,4 +11,9 @@ urlpatterns = [
     path('doctors/',views.doctors, name='doctors'),
     path('appointment/',views.appointment, name='appointment'),
     path('contact/',views.contact, name='contact'),
+    path('show/',views.show, name='show'),
+    path('display/',views.display, name='display'),
+
+
+    path('delete/<int:id>',views.delete),
 ]
