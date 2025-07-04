@@ -13,7 +13,7 @@ urlpatterns = [
     path('contact/',views.contact, name='contact'),
     path('show/',views.show, name='show'),
     path('display/',views.display, name='display'),
-
+    path('edit/<int:id>',views.edit, name='edit'),
 
     path('delete/<int:id>',views.delete),
 ]
